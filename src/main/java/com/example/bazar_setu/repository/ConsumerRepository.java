@@ -1,7 +1,11 @@
 package com.example.bazar_setu.repository;
 
 import com.example.bazar_setu.model.Consumer;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ConsumerRepository extends CrudRepository<Consumer, Integer> {
+import java.util.List;
+
+public interface ConsumerRepository extends JpaRepository<Consumer, Integer> {
+
+    public List<Consumer> findByContactNumber(String contactNumber);
 }

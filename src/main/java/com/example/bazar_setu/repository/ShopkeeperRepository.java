@@ -3,5 +3,9 @@ package com.example.bazar_setu.repository;
 import com.example.bazar_setu.model.Shopkeeper;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface ShopkeeperRepository extends CrudRepository<Shopkeeper, Integer> {
+
+    public List<Shopkeeper> findByContactNumber(String contactNumber);
 }
