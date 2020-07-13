@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ShopkeeperRepository extends CrudRepository<Shopkeeper, Integer> {
 
-    public List<Shopkeeper> findByContactNumber(String contactNumber);
+    List<Shopkeeper> findByContactNumber(String contactNumber);
 }

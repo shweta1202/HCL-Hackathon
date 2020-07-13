@@ -15,20 +15,7 @@ public class ShopkeeperController {
     private ShopkeeperRepository shopkeeperRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addShopkeeper(@RequestParam String name, @RequestParam String contactNumber,
-                                              @RequestParam String location, @RequestParam String shopName,
-                                              @RequestParam String shopType, @RequestParam String password,
-                                              @RequestParam String shopImage) {
-
-        Shopkeeper shopkeeper = new Shopkeeper();
-        shopkeeper.setName(name);
-        shopkeeper.setContactNumber(contactNumber);
-        shopkeeper.setLocation(location);
-        shopkeeper.setShopName(shopName);
-        shopkeeper.setShopType(shopType);
-        shopkeeper.setPassword(password);
-        shopkeeper.setShopImage(shopImage);
-
+    public @ResponseBody String addShopkeeper(@RequestBody Shopkeeper shopkeeper) {
         shopkeeperRepository.save(shopkeeper);
         return "Shopkeeper Saved";
     }

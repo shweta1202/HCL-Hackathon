@@ -16,14 +16,7 @@ public class ConsumerController {
     private ConsumerRepository consumerRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addConsumer(@RequestParam String name, @RequestParam String contactNumber,
-                                            @RequestParam String password, @RequestParam String location) {
-
-        Consumer consumer = new Consumer();
-        consumer.setName(name);
-        consumer.setContactNumber(contactNumber);
-        consumer.setPassword(password);
-        consumer.setLocation(location);
+    public @ResponseBody String addConsumer(@RequestBody Consumer consumer) {
         consumerRepository.save(consumer);
         return "Consumer Saved";
     }
