@@ -30,6 +30,9 @@ public class Shopkeeper {
     @Column(name = "shop_image")
     private String shopImage;
 
+    @Column(name = "shop_status")
+    private boolean shopStatus;
+
     public Integer getId() {
         return id;
     }
@@ -92,5 +95,13 @@ public class Shopkeeper {
 
     public void setShopImage(String shopImage) {
         this.shopImage = shopImage;
+    }
+
+    public boolean isShopStatus() {
+        return shopStatus;
+    }
+
+    public void setShopStatus(boolean shopStatus) {
+        this.shopStatus = shopStatus;
     }
 }
