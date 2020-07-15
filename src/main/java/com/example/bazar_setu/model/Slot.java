@@ -8,9 +8,6 @@ import java.util.Date;
 public class Slot {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
     @Column(name = "contact_number")
     private String contactNumber;
 
@@ -28,14 +25,6 @@ public class Slot {
 
     @Column(name = "end_time")
     private Time endTime;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getContactNumber() {
         return contactNumber;

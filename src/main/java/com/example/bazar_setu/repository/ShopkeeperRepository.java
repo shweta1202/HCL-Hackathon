@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ShopkeeperRepository extends CrudRepository<Shopkeeper, Integer> {
+public interface ShopkeeperRepository extends CrudRepository<Shopkeeper, String> {
 
     List<Shopkeeper> findByContactNumber(String contactNumber);
 }

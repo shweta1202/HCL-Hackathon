@@ -25,6 +25,15 @@ public class ShopkeeperController {
         return shopkeeperRepository.findByContactNumber(contactNumber);
     }
 
+    @PostMapping(path = "/changeStatus")
+    public @ResponseBody String changeShopkeeperStatus(@RequestParam String contactNUmber) {
+        List<Shopkeeper> shopkeepers = shopkeeperRepository.findByContactNumber(contactNUmber);
+        Shopkeeper shopkeeper = shopkeepers.get(0);
+        shopkeeper.setShopStatus(false);
+        shopkeeperRepository.save(shopkeeper);
+        return "Status Changed";
+    }
+
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Shopkeeper> getAllShopkeeper() {
         return shopkeeperRepository.findAll();

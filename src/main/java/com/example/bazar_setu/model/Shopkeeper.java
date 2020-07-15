@@ -6,14 +6,11 @@ import javax.persistence.*;
 public class Shopkeeper {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @Column(name = "contact_number")
+    private String contactNumber;
 
     @Column(name = "name")
     private String name;
-
-    @Column(name = "contact_number")
-    private String contactNumber;
 
     @Column(name = "location")
     private String location;
@@ -32,14 +29,6 @@ public class Shopkeeper {
 
     @Column(name = "shop_status")
     private boolean shopStatus;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
