@@ -1,10 +1,12 @@
-package com.example.bazar_setu.model;
+package com.example.bazar_setu.entity;
+
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
 @Entity(name = "shopkeeper_info")
+@DynamicUpdate
 public class Shopkeeper {
-
     @Id
     @Column(name = "contact_number")
     private String contactNumber;

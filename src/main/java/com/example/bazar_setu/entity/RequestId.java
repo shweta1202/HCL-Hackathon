@@ -1,4 +1,4 @@
-package com.example.bazar_setu.model;
+package com.example.bazar_setu.entity;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
